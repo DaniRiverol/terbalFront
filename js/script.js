@@ -45,4 +45,8 @@ $(document).ready(function(){
 
 });
 
+//dates
+const select = document.querySelectorAll('select')
+console.log(select[0]);
+console.log(select[1]);
 

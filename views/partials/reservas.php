@@ -1,6 +1,5 @@
 <?php
 include('../../config/connection.php');
-//include('../../config/get-mascota.php');
 session_start();
 if(!$_SESSION["id"])header('location:../login.php');
 
@@ -11,6 +10,7 @@ $servicios = mysqli_query($mysqli, $query);
 $query2 = "SELECT * FROM mascotas WHERE id_persona = '$id'";
 
 $mascotas = mysqli_query($mysqli, $query2);
+
 
 ?>
 
@@ -65,23 +65,25 @@ $mascotas = mysqli_query($mysqli, $query2);
 
     <h1 class="heading"> <i class="fas fa-paw"></i> Reserva <i class="fas fa-paw"></i> </h1>
 
-    <form action="../config/servicio.php" method="POST">
+    <form action="../../config/save-reserva.php" method="POST">
 
         <div class="inputBox">
             <select name="servicio" id="servicio">
             <option selected value="Seleccione un servicio">Seleccione un servicio</option>
             <?php while($servicio = $servicios->fetch_array(MYSQLI_BOTH)){
                 echo"
-                <option value=$servicio[nombre]>$servicio[nombre]</option>
-                "; }  
+                <option value=$servicio[id]>$servicio[nombre]</option>
+                "; 
+            }  
             ?>
             </select>
             <select name="mascota" id="mascota">
             <option selected value="Seleccione su mascota">Seleccione su mascota</option>
             <?php while($mascota = $mascotas->fetch_array(MYSQLI_BOTH)){
                 echo"
-                <option value=$mascota[nombre]>$mascota[nombre]</option>
-                "; }  
+                <option value=$mascota[id]>$mascota[nombre]</option>
+                "; 
+            }  
             ?>
             </select>
             <!-- <input type="text" name="tipo_servicio" placeholder="Servicio">
@@ -91,12 +93,10 @@ $mascotas = mysqli_query($mysqli, $query2);
         </div>
         
         <div class="inputBox">
-            <label for="desde">desde</label>
-            <input type="date" name="desde" id="desde">
+            <input placeholder="desde" name="desde" id="desde" onfocus="(this.type='date')"  onblur="(this.type='text')">
         </div>
         <div class="inputBox">
-            <label for="hasta">hasta</label>
-            <input type="date" name="hasta" id="hasta">
+            <input placeholder="hasta" name="hasta" id="hasta" onfocus="(this.type='date')"  onblur="(this.type='text')">
         </div>
         <input type="submit" value="Guardar" name="btnGuardar" class="btn">
 <div class="inputBox">

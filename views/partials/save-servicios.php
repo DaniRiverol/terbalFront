@@ -52,22 +52,6 @@ if(!$_SESSION["id"])header('location:../login.php');
 
 </header>
 
-<!-- header section ends -->
-
-<!-- home section starts  -->
-
-<!-- <section class="home" id="home">
-
-    <div class="content">
-        <span>Guardería de Mascotas</span>
-        <h3>Todo para <br> su tranquilidad!</h3>
-        <a href="#" class="btn">Reservar</a>
-    </div>
-
-</section> -->
-
-
-
 <section class="contact" id="contact">
 
     <h1 class="heading"> <i class="fas fa-paw"></i> Cargar Servicio <i class="fas fa-paw"></i> </h1>
@@ -87,12 +71,10 @@ if(!$_SESSION["id"])header('location:../login.php');
         </div>
         <input type="submit" value="Guardar" name="btnEditar" class="btn">
 <div class="inputBox">
-  <!--  <span> <a href="./register.php">no tienes cuenta?</a></span> -->
+  
    
 </div>
-        <!-- <textarea name="mensaje" id="" cols="30" rows="10" placeholder="mensaje"></textarea> -->
-
-
+      
     </form>
 
 </section>
@@ -102,24 +84,7 @@ if(!$_SESSION["id"])header('location:../login.php');
 <!-- footer section  -->
 
 <section class="footer">
-    
-   <!--  <div class="share">
-        <a href="#" class="btn">
-            <i class="fab fa-youtube"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </div> -->
+  
 
     <h1 class="credit"> created by <span> Six Sigma </span> | all rights reserved! </h1>
 

@@ -73,7 +73,7 @@ include('../config/connection.php');
             <input type="submit" value="registrar" name="btnRegistro" class="btn">
         </div>
         <div class="inputBox">
-        <span> <a href="./login.php">Ya tienes cuenta?</a></span>
+        <span> <a href="./login.php">Ya tiene cuenta?</a></span>
         
         </div>
 
@@ -81,9 +81,6 @@ include('../config/connection.php');
 
 </section>
 
-<!-- contact section ends -->
-
-<!-- footer section  -->
 
 <section class="footer">
   

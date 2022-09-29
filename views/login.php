@@ -53,22 +53,6 @@ include('../config/connection.php');
 
 </header>
 
-<!-- header section ends -->
-
-<!-- home section starts  -->
-
-<!-- <section class="home" id="home">
-
-    <div class="content">
-        <span>Guardería de Mascotas</span>
-        <h3>Todo para <br> su tranquilidad!</h3>
-        <a href="#" class="btn">Reservar</a>
-    </div>
-
-</section> -->
-
-
-
 <section class="contact" id="contact">
 
     <h1 class="heading"> <i class="fas fa-paw"></i> inicia sesión <i class="fas fa-paw"></i> </h1>
@@ -76,19 +60,17 @@ include('../config/connection.php');
     <form action="../config/login.php" method="POST">
 
         <div class="inputBox">
-            <!-- <input type="text" name="nombre" placeholder="nombre"> -->
+           
             <input type="email" name="email" placeholder="email">
         </div>
         
         <div class="inputBox">
-          <!--   <input type="text" name="direccion" placeholder="dirección">
-            <input type="text" name="telefono" placeholder="teléfono"> -->
             <input type="password" name="password" placeholder="password">
 
         </div>
         <input type="submit" value="Ingresar" name="btnIngreso" class="btn">
         <div class="inputBox">
-        <span> <a href="./register.php">no tienes cuenta?</a></span>
+        <span> <a href="./register.php">no tiene cuenta?</a></span>
         </div>
     </form>
 

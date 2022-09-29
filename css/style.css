@@ -504,9 +504,18 @@ font-size: 1.8rem;
     background: #333;
 }
 #calendar{
-    width: 50%;
+    width: 65%;
 }
-
+.product .box-container .inputBox .box-calendar {
+   /*  background-color: #FCDD26; */
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+}
+.inputBox .box-calendar span{
+    background-color: #666;
+}
 .footer .share {
     display: flex;
     align-items: center;

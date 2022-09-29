@@ -1,24 +1,11 @@
 <?php
 include('../../config/connection.php');
-
+include('../../config/get-reserva.php');
 session_start();
 if(!$_SESSION["id"])header('location:../login.php');
 $id = $_SESSION["id"];
 
-/* SELECT r.id, p.nombre_completo, r.fecha_ingreso as ingreso, r.fecha_egreso as egreso, r.estado  FROM reservas as r INNER JOIN personas  as p ON r.id_cliente = p.id; */
-/* SELECT r.id, p.nombre_completo, m.nombre as nombre_mascota,s.nombre as nombre_servicio, r.fecha_ingreso as ingreso, r.fecha_egreso as egreso, r.estado  FROM reservas as r INNER JOIN personas  as p ON r.id_cliente = p.$id INNER JOIN mascotas as m ON r.id_mascota = m.id INNER JOIN servicios as s ON r.id_servicio = s.id */
-$query="SELECT reservas.id as id from reservas INNER JOIN personas ON reservas.id_cliente = 'personas.$id'" ;
-
-$reservas = mysqli_query($mysqli, $query);
-
-/* if($reservas){
-   
-    echo"Exito ";
-  
-}else{
-    echo"error";
-} */
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="es">
@@ -74,16 +61,17 @@ $reservas = mysqli_query($mysqli, $query);
 
 
 <section class="product" id="product">
-
     <h1 class="heading"> <i class="fas fa-paw"></i> calendario <i class="fas fa-paw"></i> </h1>
     <div class="box-container">
-        <div class="box">
-         <div id="calendar"></div>
+      
+        <div class="inputBox">
+            <div class="box-calendar">
+                <div id="calendar"></div>
+                <span></span>
+            </div>
+            
         </div>
     </div>
-   
-   
-
 </section>
 
 
@@ -105,29 +93,32 @@ $reservas = mysqli_query($mysqli, $query);
     //fullCalendar
 
 document.addEventListener('DOMContentLoaded', function() {
-  const calendarEl = document.getElementById('calendar');
-  const calendar = new FullCalendar.Calendar(calendarEl, {
-    locale:"es",
-    initialView: 'dayGridMonth',
-    events:[
-        {
-            title:'Evento 1',
-            start:'2022-09-28',
-            end:'2022-09-30'
+  let calendarEl = document.getElementById('calendar');
+  let calendar = new FullCalendar.Calendar(calendarEl, {
+    headerToolbar:{
+        letf:'title',
+        center:'',
+        right:'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    locale:'es',
+    //initialView: 'dayGridMonth',
+   events:[
+    <?php
+        foreach($reservas as $res){ 
+    ?>
+        { 
+            title:'<?php echo $res["nombre"];?>',
+            start: '<?php echo $res["fecha_ingreso"]; ?>',
+            end: '<?php echo $res["fecha_egreso"]; ?>',
+            description: '<?php echo $res["descripción"]; ?>',
+        },
+    <?php
         }
-    ]
- /*    events:[
-        <?php //while($dataEvento = $reservas->fetch_array(MYSQLI_BOTH)){ ?>
-                {
-                    //title:"<?php echo $dataEvento["id"];?>",
-                    //start:"<?php echo $dataEvento["fecha_ingreso"];?>",
-                   // end:"<?php echo $dataEvento["fecha_egreso"];?>",
-                    //description:"<?php echo $dataEvento["nombre"];?>",
+    ?>
 
+   ],
+   color:'red'
 
-                }
-            <?php //}?>
-    ] */
   });
   calendar.render();
 });
