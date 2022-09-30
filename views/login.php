@@ -1,8 +1,6 @@
 <?php
 include('../config/connection.php');
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -76,29 +74,10 @@ include('../config/connection.php');
 
 </section>
 
-<!-- contact section ends -->
-
-<!-- footer section  -->
 
 <section class="footer">
     
-   <!--  <div class="share">
-        <a href="#" class="btn">
-            <i class="fab fa-youtube"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </div> -->
+   
 
     <h1 class="credit"> created by <span> Six Sigma </span> | all rights reserved! </h1>
 

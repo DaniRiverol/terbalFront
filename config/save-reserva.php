@@ -16,7 +16,7 @@ $reservas = mysqli_query($mysqli, $query);
 if($reservas){
     echo'Exito';
     header('location:../views/partials/pay.php');
-    mysqli_close($mysqli);
+   
 }else{
     echo'Error';
     mysqli_close($mysqli);

@@ -64,15 +64,17 @@ $mascotas = mysqli_query($mysqli, $query2);
 <section class="contact" id="contact">
 
     <h1 class="heading"> <i class="fas fa-paw"></i> Reserva <i class="fas fa-paw"></i> </h1>
-
     <form action="../../config/save-reserva.php" method="POST">
+        <section class="inputBox">
+        <p class='mensaje'>Para realizar una reserva seleccione un servicio, su mascota y la fecha de ingreso y fin</p>
+        </section>
 
         <div class="inputBox">
             <select name="servicio" id="servicio">
             <option selected value="Seleccione un servicio">Seleccione un servicio</option>
             <?php while($servicio = $servicios->fetch_array(MYSQLI_BOTH)){
                 echo"
-                <option value=$servicio[id]>$servicio[nombre]</option>
+                <option value=$servicio[id_s]>$servicio[nombre]</option>
                 "; 
             }  
             ?>
@@ -87,25 +89,20 @@ $mascotas = mysqli_query($mysqli, $query2);
             ?>
             </select>
             
-            <!-- <input type="text" name="mascota" placeholder="$"> -->
-            <!-- <input type="text" name="direccion" placeholder="dirección" >
-            <input type="text" name="telefono" placeholder="teléfono" > -->
+        
         </div>
       
             <div class="inputBox">
                 <input placeholder="desde" name="desde" id="desde" onfocus="(this.type='date')"  onblur="(this.type='text')">
-                <input type="text" name="precio" placeholder="$">
+                <input placeholder="hasta" name="hasta" id="hasta" onfocus="(this.type='date')"  onblur="(this.type='text')">
         </div>
-        <div class="inputBox">
-            <input placeholder="hasta" name="hasta" id="hasta" onfocus="(this.type='date')"  onblur="(this.type='text')">
-        </div>
+        <!-- <div class="inputBox">
+        </div> -->
         <input type="submit" value="Guardar" name="btnGuardar" class="btn">
-<div class="inputBox">
-  <!--  <span> <a href="./register.php">no tienes cuenta?</a></span> -->
+<!-- <div class="inputBox">
    
-</div>
-        <!-- <textarea name="mensaje" id="" cols="30" rows="10" placeholder="mensaje"></textarea> -->
-
+</div> -->
+     
 
     </form>
 
@@ -117,24 +114,7 @@ $mascotas = mysqli_query($mysqli, $query2);
 
 <section class="footer">
     
-   <!--  <div class="share">
-        <a href="#" class="btn">
-            <i class="fab fa-youtube"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="#" class="btn">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </div> -->
-
+  
     <h1 class="credit"> created by <span> Six Sigma </span> | all rights reserved! </h1>
 
 </section>

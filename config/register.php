@@ -12,14 +12,15 @@ if(!empty($_POST["btnRegistro"])){
     $email = $_POST["email"];
     $password = $_POST["password"];
     
+    
     $query = "INSERT INTO personas(nombre_completo, direccion, telefono, email, password, cuil) VALUES ('$nombre','$direccion','$telefono','$email','$password','null')";
     //verificar datos repetidos
     $check_email = mysqli_query($mysqli, "SELECT * FROM personas WHERE email = '$email'");
-if(mysqli_num_rows($check_email) > 0){
+    if(mysqli_num_rows($check_email) > 0){
 
-mysqli_close($mysqli);
+    mysqli_close($mysqli);
 
-}else{
+    }else{
     
     $resultado = mysqli_query($mysqli, $query);
     if(!$resultado){

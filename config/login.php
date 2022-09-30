@@ -8,9 +8,13 @@ if(!empty($_POST["btnIngreso"])){
         
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $query= "SELECT * FROM personas WHERE email = '$email' AND password = '$password'";
+
+
+
+        $query = "SELECT * FROM personas WHERE email = '$email' AND password = '$password'";
         $resultado = mysqli_query($mysqli, $query);
-        
+       
+
         if($data = $resultado->fetch_object()){
             $_SESSION["id"]= $data->id;
             $_SESSION["nombre_completo"]= $data->nombre_completo;

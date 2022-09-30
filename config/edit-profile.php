@@ -12,7 +12,6 @@ if(!empty($_POST["btnEditar"])){
     $telefono = $_POST["telefono"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-    
     $query = "UPDATE personas SET nombre_completo ='$nombre',direccion ='$direccion',telefono ='$telefono', email='$email',password='$password',cuil='null' WHERE id ='$id'";
     
 

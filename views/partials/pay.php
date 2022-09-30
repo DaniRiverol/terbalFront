@@ -78,12 +78,12 @@ if(!$_SESSION["id"])header('location:../login.php');
 
                     echo"
                         <tr>
-                            <td>$reserva[id]</td>
+                            <td>$reserva[id_r]</td>
                             <td>$reserva[nombre]</td>
                             <td>$ $reserva[precio]</td>
                             <td class='estado'>$reserva[estado]</td>
                             <td> 
-                                <a href='../../config/pay.php?id=$reserva[id]' id='$reserva[id]' class='fas fa-check ' style='background:#FCDD26' ></a>
+                                <a href='../../config/pay.php?id=$reserva[id_r]' id='$reserva[id_r]' class='fas fa-check ' style='background:#FCDD26' ></a>
                             </td>
                         </tr>
                         ";
