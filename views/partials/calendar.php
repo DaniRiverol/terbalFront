@@ -117,7 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
     ?>
 
    ],
-   color:'red'
+   eventColor: '#378006',
+   
 
   });
   calendar.render();

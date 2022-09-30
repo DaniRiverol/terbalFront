@@ -1,8 +1,10 @@
 <?php
 include('../../config/connection.php');
-
+include('../../config/get-reserva.php');
 session_start();
 if(!$_SESSION["id"])header('location:../login.php');
+
+
 ?>
 
 <!DOCTYPE html>
@@ -53,43 +55,50 @@ if(!$_SESSION["id"])header('location:../login.php');
 </header>
 
 
+<section class="products" id="products">
 
-<section class="contact" id="contact">
+    <h1 class="heading"> <i class="fas fa-paw"></i> Confirmar reserva <i class="fas fa-paw"></i> </h1>
+    <div class="box-container">
+        <div class="box">
+            <table class="table">
+                <tr>
+                <thead>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>precio</th>
+                    <th>estado</th>
+                    <th>pagar</th>
+                    
+                    
+                </thead>
+                </tr>
+                <tbody>
+                
+                 <?php while($reserva = $reservas->fetch_array(MYSQLI_BOTH)){
 
-    <h1 class="heading"> <i class="fas fa-paw"></i> Ingresar mascota <i class="fas fa-paw"></i> </h1>
-
-    <form action="../../config/save-mascota.php" method="POST">
-
-        <div class="inputBox">
-            <input type="text" name="nombre" placeholder="nombre" >
-            <input type="text" name="edad" placeholder="edad">
+                    echo"
+                        <tr>
+                            <td>$reserva[id]</td>
+                            <td>$reserva[nombre]</td>
+                            <td>$ $reserva[precio]</td>
+                            <td class='estado'>$reserva[estado]</td>
+                            <td> 
+                                <a href='../../config/pay.php?id=$reserva[id]' id='$reserva[id]' class='fas fa-check ' style='background:#FCDD26' ></a>
+                            </td>
+                        </tr>
+                        ";
+                    }?>
+                    
+                </tbody>
+            </table>
         </div>
-        
-        <div class="inputBox">
-            <input type="text" name="color" placeholder="color de pelaje">
-            <input type="text" name="raza" placeholder="raza">
-            <input type="text" name="alimento" placeholder="come alimento balanceado? Si/No">
-
-        </div>
-        <input type="submit" value="Guardar" name="btnGuardar" class="btn">
-    <div class="inputBox">
- 
-   
     </div>
-
-    </form>
 
 </section>
 
-<!-- contact section ends -->
-
-<!-- footer section  -->
 
 <section class="footer">
-    
-
-    <h1 class="credit"> created by <span> Six Sigma </span> | all rights reserved! </h1>
-
+<h1 class="credit"> created by <span> Six Sigma </span> | all rights reserved! </h1>
 </section>
 
 

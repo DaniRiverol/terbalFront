@@ -86,14 +86,15 @@ $mascotas = mysqli_query($mysqli, $query2);
             }  
             ?>
             </select>
-            <!-- <input type="text" name="tipo_servicio" placeholder="Servicio">
-            <input type="text" name="mascota" placeholder="nombre mascota"> -->
+            
+            <!-- <input type="text" name="mascota" placeholder="$"> -->
             <!-- <input type="text" name="direccion" placeholder="dirección" >
             <input type="text" name="telefono" placeholder="teléfono" > -->
         </div>
-        
-        <div class="inputBox">
-            <input placeholder="desde" name="desde" id="desde" onfocus="(this.type='date')"  onblur="(this.type='text')">
+      
+            <div class="inputBox">
+                <input placeholder="desde" name="desde" id="desde" onfocus="(this.type='date')"  onblur="(this.type='text')">
+                <input type="text" name="precio" placeholder="$">
         </div>
         <div class="inputBox">
             <input placeholder="hasta" name="hasta" id="hasta" onfocus="(this.type='date')"  onblur="(this.type='text')">
